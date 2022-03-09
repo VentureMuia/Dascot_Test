@@ -139,9 +139,6 @@ server<-function(input,output,session){
           theme_void() +
           theme(plot.margin = margin(1.5,0,0,0, unit = "cm"))
       ) +
-        #draw_text("Dogs of the Tidyverse",                x = 0.5 , y = 0.95, size = 50, family = "amatic", fontface = "bold") + 
-        #draw_text("Each a Good Boy, Each a Character",    x = 0.5 , y = 0.90, size = 30, family = "amatic") +
-        #draw_text("Traits: Strong (5) to Weak (0)",       x = 0.5 , y = 0.86, size = 25, family = "amatic") +
         draw_text("Designed by Bonaventure", x = 0.41 , y = 0.35, size = 16, family = "me_again", hjust = 0, color = "grey70")
     }, height = 800, width = 800)
   
