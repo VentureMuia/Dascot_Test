@@ -7,14 +7,31 @@ library(shinythemes)
 library(ggplot2)
 library(dashboardthemes)
 
+# Loading the datasets 
+
+# for traits
+breed_traits_raw      <- readr::read_csv('breed_traits.csv')
+# for images
+breed_rank_all_raw    <- readr::read_csv('breed_rank.csv')
+
+
+
+
 # Creating the UI
 header<-dashboardHeader(title = "Dog Breeds Dashboard",titleWidth = 700)
 
 # Sidebar
 sidebar<-dashboardSidebar(
-  sidebarMenu(
-    menuItem("Dog",tabName = "DogBreed",icon = icon("dog"),class="fa-border"),
-    tags$style("fa-spin{text-align:centre;}")
+  sidebarMenu(id="selected",
+    menuItem("Dog",tabName = "DogBreed",icon = icon("dog",class="fa-spin")),
+    conditionalPanel(condition = "input.selected=='Dog'",
+                     selectInput("Breed",
+                                  "Choose the dog Breed",
+                                 choices = c("",""),
+                                 selected = "Chiu"
+                                 ),
+                     submitButton("Update!")
+                     )
   )
 )
 
@@ -22,7 +39,10 @@ sidebar<-dashboardSidebar(
 body<-dashboardBody(
   shinyDashboardThemes("onenote"),
   tabItems(
-    tabItem(tabName = "DogBreed")
+    tabItem(tabName = "DogBreed",
+            box(width = 12,
+                background = "blue",
+                height = 100))
   )
 )
 
