@@ -1,0 +1,13 @@
+name: Dascot_Test
+title: Dascot_Test
+username:
+account: venturemuia
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5821345
+bundleId: 5664829
+url: https://venturemuia.shinyapps.io/Dascot_Test/
+when: 1646888198.10505
+lastSyncTime: 1646888198.10505
+asMultiple: FALSE
+asStatic: FALSE
